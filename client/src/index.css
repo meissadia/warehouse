@@ -1,0 +1,205 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+h1 {
+  color: #444;
+  text-align: center;
+}
+
+#main {
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas:
+    "navbar navbar"
+    "inventory details"; 
+}
+
+nav {
+  grid-area: navbar;
+  background-color: #880E4F;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+#inventory {
+  grid-area: inventory;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#inventory-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: space-around;
+}
+
+#inventory-list li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #880E4F;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+  color: #880E4F;
+}
+
+#inventory-list li:hover {
+  background-color: rgba(136, 14, 79, 0.125);
+  box-shadow: 1px 2px 3px rgba(136, 14, 79, 0.6);
+}
+
+#inventory-details {
+  background: rgb(181, 28, 110);
+  padding: 0 20px;
+  overflow: auto;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  color: #fff;
+  grid-area: details;
+  width: 100%;
+  display: grid;
+  justify-self: stretch;
+}
+
+#inventory-details div > .item {
+  text-align: center;
+  border-bottom: 2px solid rgb(198, 137, 137);
+  padding-bottom: 10px;
+}
+
+#inventory-details div > .item .actions {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+#inventory-details h1 {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+#inventory-details .nearby ul {
+  display: grid;
+  grid-gap: 10px;
+  justify-content: stretch;
+  align-content: start;
+  list-style: none;
+  padding: 0;
+
+}
+
+#inventory-details .nearby ul li {
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+#inventory-details .nearby ul li .item {
+  padding-left: 15px;
+}
+
+#add-item {
+  grid-area: newItem;
+  background: rgba(106, 230, 252, 0.221);
+  padding: 20px;
+  width: 60%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#add-item .field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+#add-item label {
+  text-align: right;
+  padding: 6px;
+}
+
+#add-item select,
+#add-item input {
+  margin: 4px;
+  padding: 6px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#add-item button {
+  color: #fff;
+  font-size: 2em;
+  line-height: 2em;
+  background: rgb(74, 179, 203);
+  padding: 0 20px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+}
+
+#add-item button:hover {
+  background: rgb(51, 140, 160);
+  box-shadow: 0px 10px 13px rgba(14, 136, 124, 0.393);
+}
+
+.center {
+  text-align: center;
+}
+
+.delete-item-button {
+  background: #941272;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  height: 35px;
+  margin: 5px;
+  padding: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: .75em;
+  cursor: pointer;
+  transition: width 1s ease;
+  width: 60px;
+}
+
+.delete-item-button:hover {
+  background-color: #ef0fb4;
+  width:75px;
+}
+
+.quantity {
+  text-transform: uppercase;
+}

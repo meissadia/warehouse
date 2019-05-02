@@ -1,0 +1,46 @@
+/**
+ * Errors Styles
+ */
+
+ header {
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     grid-template-rows: 1fr;
+     grid-template-areas: 
+        "title close";
+    line-height: 25px;
+ }
+
+ /* Positions */
+ .container {
+    background: #eb8059;
+ }
+
+ .title { 
+     grid-area: title;
+     padding-left: 15px;
+}
+
+.close {
+    font-size: 1.5em;
+    width: 25px;
+    position: relative;
+    bottom: 10%;
+    left: 65%;
+    cursor: pointer;
+}
+
+.errors {
+    /* display: grid; */
+    /* grid-template-rows: 1fr; */
+    /* list-style: none; */
+    /* margin: 0 auto; */
+    padding: 5px inherit;
+    background: orange;
+}
+
+.error {
+    width: 100%;
+    margin: 3px auto 3px auto;
+    list-style-type: square;
+}
