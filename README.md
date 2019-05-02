@@ -29,7 +29,7 @@ CSS Grid (really digging `grid-template-areas` for ease of building a layout!)
 
 ### GraphQL Server (/server)
 
-Create `/.env.local` with the following entries
+Create `/.env` with the following entries
 ```
 DB_USER=<mongodb-user>
 DB_PASS=<mongodb-user-pw>
