@@ -3,7 +3,8 @@ import { Mutation } from 'react-apollo';
 
 import { DeleteItemMutation } from '../mutations';
 
-export const DeleteItemButton = ({ id, reset }) => {
+export const DeleteItemButton = ({ id, reset, show }) => {
+    if(!show) return null;
     return (
       <Mutation mutation={DeleteItemMutation} >
         {(deleteItem, { data }) => (
