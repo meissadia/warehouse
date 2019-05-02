@@ -12,7 +12,11 @@ import mongoose from 'mongoose';
 // Cross-Origin Requests
 import cors from 'cors';
 
-mongoose.connect('mongodb+srv://warehouse-app:test123@cluster0-hoevu.mongodb.net/test?retryWrites=true');
+require('dotenv').config();
+
+const { DB_USER, DB_PASS, DB_HOST } = process.env;
+
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/test?retryWrites=true`);
 mongoose.connection.once('open', () => {
     console.log('connected to MongoDB');
 });

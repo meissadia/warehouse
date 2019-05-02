@@ -24,13 +24,33 @@ CSS Grid (really digging `grid-template-areas` for ease of building a layout!)
 
 ## Run Locally
 ```
-We're using Node 10.15.1.
+• Using Node 10.15.1 with NVM
 ```  
 
-After cloning the repo, open a terminal for each the `/client` and `/server` directories and run 
+### GraphQL Server (/server)
+
+Create `/.env.local` with the following entries
 ```
+DB_USER=<mongodb-user>
+DB_PASS=<mongodb-user-pw>
+DB_HOST=<mongodb-host>
+```  
+then   
+```
+nvm use
+npm install
+npm start
+```  
+
+### React Client (/client)
+```
+nvm use
 npm install
 npm start
 ```
+
+### Access Running Apps
+client: http://localhost:3000  
+server: http://localhost:4000/graphql  
 
 
