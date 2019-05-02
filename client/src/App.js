@@ -13,7 +13,7 @@ const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
 });
 
-export const INIT_ID = "5cc6add54e22eb3fc92f2629";
+export const INIT_ID = "000000000000000000000000";
 
 class App extends React.Component {
   constructor(props) {

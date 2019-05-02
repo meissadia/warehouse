@@ -13,14 +13,16 @@ It's been a valuable dive into working with Express, GraphQL schemas and mutatio
 I'm also planning to finally try out Jest's snapshot testing! That should be cool. 
 
 ## Roadmap
+• Indicate loading when Adding an Item
 • Add Search box for Inventory  
 • Add Location dialog  
 • Continue to build test suite
+• Deploy live demo
 
 ## Stack
 Front-end is React/Apollo  
 Back-end is Express/GraphQL  
-CSS Grid (really digging `grid-template-areas` for ease of building a layout!)  
+CSS Grid (really digging `grid-template-areas` for easy layouts!)  
 
 ## Run Locally
 ```
