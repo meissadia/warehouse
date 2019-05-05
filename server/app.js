@@ -18,7 +18,7 @@ const { DB_USER, DB_PASS, DB_HOST } = process.env;
 
 mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/test?retryWrites=true`);
 mongoose.connection.once('open', () => {
-    console.log('connected to MongoDB');
+    console.log('📈 Connected to MongoDB.');
 });
 
 const port = 4000;
@@ -37,5 +37,6 @@ app.use('/graphql', graphQLHTTP({
 
 // Set app to listen and act with a callback function
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log('📖 Welcome to the Warehouse Server!');
+    console.log(`🔍 Listening on port ${port}.`);
 });
