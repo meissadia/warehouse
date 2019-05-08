@@ -23,7 +23,7 @@ describe('DeleteItemButton', () => {
     ];
 
     it('renders a delete button', () => {
-        const resetSpy = jest.fn(() => console.log('JEST!'));
+        const resetSpy = jest.fn();
         const wrapper = mount(
             <MockedProvider mocks={mocks}>
                 <DeleteItemButton
@@ -34,10 +34,21 @@ describe('DeleteItemButton', () => {
 
         const button = wrapper.find('button');
         expect(button.length).toEqual(1);
+    });
 
-        // FIXME: How the hell do I get the mutation function to enter the .then clause????????
-        // button.simulate('click');
-        // expect(resetSpy.mock.calls.length).toEqual(1);
+    it('click triggers delete', () => {
+        const resetSpy = jest.fn();
+        const wrapper = mount(
+            <MockedProvider mocks={mocks}>
+                <DeleteItemButton
+                    id={testId}
+                    show={true}
+                    reset={resetSpy} />
+            </MockedProvider>);
+
+        const button = wrapper.find('button');
+        button.simulate('click');
+        expect(resetSpy.mock.calls.length).toEqual(1);
     });
 
 });

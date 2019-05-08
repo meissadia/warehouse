@@ -27,16 +27,19 @@ export const DeleteItemButton = ({ id, reset, show }) => {
           <button
             className='delete-item-button'
             onClick={() => {
+              // Clear current item from selection
+              reset();
+              // FIXME: Use update/refetchQueries instead of display:none
+              // FIXME: Animate a smooth transition for removed elements
+              
+              // Optimistic UI update, unhide the item if the delete fails
+              const target = document.querySelector(`#inventory-list li[value="${id}"]`)
+              target && target.setAttribute('style', 'display:none;');
               deleteItem({ variables: { id } })
-              .then(args => {
-                // Clear current item from selection
-                reset();
-                // FIXME: Use update/refetchQueries instead of display:none
-                // FIXME: Animate a smooth transition for removed elements
-                // Remove corresponding Inventory item
-                document.querySelector(`#inventory-list li[value="${id}"]`).setAttribute('style', 'display:none;');
-              })
-              .catch(args => console.log('Failed to delete item!', args));
+                .catch(args => {
+                  console.log('Failed to delete item!', args)
+                  target && target.setAttribute('style', 'display:grid;');
+                });
             }}
           >Delete</button>            
         )}
