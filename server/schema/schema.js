@@ -138,10 +138,7 @@ const Mutation = new GraphQLObjectType({
                 id: { type: GraphQLID }
             },
             resolve(_parent, args) {
-                InventoryItem.findByIdAndDelete(args.id).exec()
-                    .then(x => x)
-                    .catch(x => console.log('DOH!!', args.id));
-                
+                return InventoryItem.findByIdAndDelete(args.id).exec();
             }
         }
     })
