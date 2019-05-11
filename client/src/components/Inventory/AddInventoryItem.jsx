@@ -7,7 +7,7 @@ import { InventoryQuery, LocationsQuery } from '../../queries';
 import { AddInventoryItemMutation } from '../../mutations';
 import { camelize } from '../../helpers/presenters';
 
-class AddInventoryItem extends React.PureComponent {
+export class AddInventoryItem extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = this.defaultState();
@@ -57,9 +57,9 @@ class AddInventoryItem extends React.PureComponent {
                 refetchQueries: [
                     { query: InventoryQuery }
                 ]
-            }).then((data) => {
+            }).then(_data => {
                 this.setState(this.defaultState);
-            }).catch((data) => {
+            }).catch(data => {
                 console.log('Add Item Failed: ', data);
             });
         }
@@ -134,7 +134,7 @@ class AddInventoryItem extends React.PureComponent {
                             {this.locationOptions()}
                         </select>
                     </div>
-                    <button>+</button>
+                    <input id='submit' type='submit'>+</input>
                 </form>
             </div>
         );
