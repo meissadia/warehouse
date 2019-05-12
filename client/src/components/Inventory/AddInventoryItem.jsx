@@ -134,7 +134,7 @@ export class AddInventoryItem extends React.PureComponent {
                             {this.locationOptions()}
                         </select>
                     </div>
-                    <input id='submit' type='submit'>+</input>
+                    <button id='submit'>+</button>
                 </form>
             </div>
         );
